@@ -1,119 +1,76 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a] text-gray-300">
-      {/* TOP */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-[#0b1411] text-[#9fb7ad] px-8 md:px-20 pt-24 pb-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
 
-        {/* BRAND / ABOUT */}
+        {/* BRAND */}
         <div>
-          <h3 className="text-2xl font-semibold text-white">
-            TENNIS<span className="text-green-500">PRO</span>
+          <h3 className="text-xl font-medium text-[#e6f2ee] mb-4">
+            Sanskriti Sports Club
           </h3>
-
-          <p className="mt-4 text-sm leading-relaxed text-gray-400">
-            TennisPro is a dedicated tennis sports club focused on
-            structured training, match exposure and long-term player development.
-            We train beginners, competitive players and juniors with equal discipline.
-          </p>
-
-          <p className="mt-4 text-sm text-gray-400">
-            This is not casual coaching.  
-            This is performance-driven tennis training.
+          <p className="text-sm leading-relaxed text-[#b8cbc3]">
+            A high-performance tennis academy focused on structured training,
+            long-term athlete development, and competitive excellence.
           </p>
         </div>
 
-        {/* QUICK LINKS */}
+        {/* NAVIGATION */}
         <div>
-          <h4 className="text-white font-semibold mb-5">Explore</h4>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <Link to="/programs" className="hover:text-green-400 transition">
-                Training Programs
-              </Link>
-            </li>
-            <li>
-              <Link to="/tournaments" className="hover:text-green-400 transition">
-                Tournaments
-              </Link>
-            </li>
-            <li>
-              <Link to="/gallery" className="hover:text-green-400 transition">
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link to="/coach" className="hover:text-green-400 transition">
-                Our Coach
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-green-400 transition">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* TRAINING INFO */}
-        <div>
-          <h4 className="text-white font-semibold mb-5">Training Details</h4>
-
-          <ul className="space-y-4 text-sm text-gray-400">
-            <li className="flex gap-3">
-              <Clock size={16} className="text-green-400 mt-1" />
-              <div>
-                <p>Morning: 6:00 AM – 9:00 AM</p>
-                <p>Evening: 4:30 PM – 8:30 PM</p>
-              </div>
-            </li>
-
-            <li className="flex gap-3">
-              <MapPin size={16} className="text-green-400 mt-1" />
-              <p>Practice Courts, City Sports Complex</p>
-            </li>
-
-            <li className="flex gap-3">
-              <Phone size={16} className="text-green-400 mt-1" />
-              <p>+91 9XXXXXXXXX</p>
-            </li>
-
-            <li className="flex gap-3">
-              <Mail size={16} className="text-green-400 mt-1" />
-              <p>tennispro@email.com</p>
-            </li>
-          </ul>
-        </div>
-
-        {/* CTA */}
-        <div>
-          <h4 className="text-white font-semibold mb-5">
-            Ready to Train?
+          <h4 className="text-xs uppercase tracking-[0.3em] mb-6 text-[#e6f2ee]">
+            Explore
           </h4>
-
-          <p className="text-sm text-gray-400 mb-6">
-            Join structured tennis training designed for real improvement,
-            discipline and match confidence.
-          </p>
-
-          <a
-            href="https://wa.me/919XXXXXXXXX"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-600 hover:bg-green-700
-            text-white px-7 py-4 rounded-full text-sm font-medium transition"
-          >
-            Enquire on WhatsApp
-          </a>
+          <ul className="space-y-3 text-sm">
+            <li><Link to="/" className="hover:text-[#e6f2ee] transition">Home</Link></li>
+            <li><Link to="/programs" className="hover:text-[#e6f2ee] transition">Programs</Link></li>
+            <li><Link to="/tournaments" className="hover:text-[#e6f2ee] transition">Tournaments</Link></li>
+            <li><Link to="/gallery" className="hover:text-[#e6f2ee] transition">Gallery</Link></li>
+            <li><Link to="/coach" className="hover:text-[#e6f2ee] transition">Coach</Link></li>
+            <li><Link to="/contact" className="hover:text-[#e6f2ee] transition">Contact</Link></li>
+          </ul>
         </div>
+
+        {/* PROGRAMS */}
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.3em] mb-6 text-[#e6f2ee]">
+            Training
+          </h4>
+          <ul className="space-y-3 text-sm">
+            <li>Foundation Program</li>
+            <li>Performance Training</li>
+            <li>Elite Coaching</li>
+            <li>Tournament Preparation</li>
+            <li>Junior Development</li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.3em] mb-6 text-[#e6f2ee]">
+            Contact
+          </h4>
+          <ul className="space-y-3 text-sm">
+            <li>📍 Jaipur, Rajasthan</li>
+            <li>📞 +91 9XXXXXXXXX</li>
+            <li>✉️ info@sanskritisportsclub.com</li>
+          </ul>
+        </div>
+
       </div>
 
       {/* BOTTOM */}
-      <div className="border-t border-gray-800 text-center py-4 text-xs text-gray-500">
-        © {new Date().getFullYear()} TennisPro Sports Club.  
-        All rights reserved.
+      <div className="mt-20 border-t border-white/10 pt-6 flex flex-col md:flex-row
+        items-center justify-between text-xs text-[#6f8f85] gap-4">
+
+        <p>
+          © {new Date().getFullYear()} Sanskriti Sports Club. All rights reserved.
+        </p>
+
+        <div className="flex gap-6">
+          <span className="hover:text-[#8fbfa9] cursor-pointer">Privacy Policy</span>
+          <span className="hover:text-[#8fbfa9] cursor-pointer">Terms</span>
+        </div>
       </div>
     </footer>
   );

@@ -3,6 +3,7 @@ import { useState } from "react";
 
 /* GLOBAL COMPONENTS */
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 
 /* PAGES */
@@ -34,8 +35,10 @@ export default function App() {
             <Route path="/coach" element={<Coach />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </>
       )}
     </BrowserRouter>
+    
   );
 }
