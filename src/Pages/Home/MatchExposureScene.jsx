@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import img19 from "../assets/image/19.jpg";
 
 export default function MatchExposureScene() {
   const imageRef = useRef(null);
@@ -82,7 +83,7 @@ export default function MatchExposureScene() {
           >
             {/* FRAME */}
             <div
-              className="relative p-[10px] border border-[#2a3a34]
+              className="relative p-2.5 border border-[#2a3a34]
               bg-[#0b1411]
               shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
             >
@@ -95,14 +96,14 @@ export default function MatchExposureScene() {
                 className="relative overflow-hidden"
               >
                 <motion.img
-                  src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=2000"
+                  src={img19}
                   alt="Competitive tennis match"
                   style={{ y, scale }}
-                  className="w-full h-[520px] object-cover"
+                  className="w-full h-130 object-cover"
                 />
 
                 {/* INNER OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t
+                <div className="absolute inset-0 bg-linear-to-t
                   from-[#0e1714]/45 via-transparent to-transparent" />
               </motion.div>
             </div>
@@ -110,7 +111,7 @@ export default function MatchExposureScene() {
             {/* SOFT GLOW */}
             <div
               className="pointer-events-none absolute -inset-4
-              bg-gradient-to-br from-[#8fbfa9]/10 via-transparent to-transparent
+              bg-linear-to-br from-[#8fbfa9]/10 via-transparent to-transparent
               blur-2xl opacity-40"
             />
           </motion.div>

@@ -1,39 +1,46 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import img30 from "./assets/image/30.jpg";
+import img31 from "./assets/image/31.jpg";
+import img32 from "./assets/image/32.jpg";
+import img33 from "./assets/image/33.jpg";
+import img34 from "./assets/image/34.jpg";
+import img35 from "./assets/image/35.jpg";
+import img36 from "./assets/image/36.jpg";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1800",
+    src: img31,
     title: "Early Morning Training",
     caption:
       "This session focuses on technical repetition during early hours when concentration is highest. Players work on balance, footwork, and stroke rhythm without external distractions.",
   },
   {
-    src: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1800",
+    src: img32,
     title: "Coach Observation & Correction",
     caption:
       "Coaches closely observe player movement and stroke execution. Corrections are made in real time to ensure proper technique and prevent long-term mechanical errors.",
   },
   {
-    src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1800",
+    src: img33,
     title: "Focused Individual Practice",
     caption:
       "Individual sessions are designed to address specific technical needs. Players work independently under guidance, improving control, consistency, and confidence.",
   },
   {
-    src: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1800",
+    src: img34,
     title: "Match Play Under Pressure",
     caption:
       "Structured match play replicates real competitive situations. Players learn to manage scoring, emotions, and tactical decisions during live points.",
   },
   {
-    src: "https://images.unsplash.com/photo-1599058917212-d750089bc07c?q=80&w=1800",
+    src: img35,
     title: "Endurance & Conditioning",
     caption:
       "Fitness blocks are integrated into on-court sessions. The emphasis remains on movement efficiency, stamina, and recovery rather than exhaustion.",
   },
   {
-    src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1800",
+    src: img36,
     title: "Evening Training Sessions",
     caption:
       "Evening sessions simulate match-day conditions under lights. Players adapt to changing visibility, fatigue, and competitive rhythm.",
@@ -57,7 +64,7 @@ export default function Gallery() {
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000"
+          src={img30}
           alt="Academy training"
           className="absolute inset-0 w-full h-full object-cover"
         />

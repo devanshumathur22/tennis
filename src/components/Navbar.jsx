@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import logo from "../Pages/assets/image/logo.jpg";
+
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Programs", path: "/programs" },
@@ -24,56 +26,50 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50
-        transition-all duration-500
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 h-20
+        transition-colors duration-500
         ${
           scrolled
-            ? "bg-[#0b1411]/85 backdrop-blur-md border-b border-[#1f2a26]"
+            ? "bg-[#0b1411]/90 backdrop-blur border-b border-[#1f2a26]"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-20
-          h-20 flex items-center justify-between">
+          h-full flex items-center justify-between">
 
           {/* LOGO */}
           <Link
             to="/"
-            className="text-sm tracking-wide font-medium text-[#e6f2ee]"
+            className="flex items-center gap-3"
           >
-            Sanskriti Tennis Academy
+            <img
+              src={logo}
+              alt="Sanskriti Tennis Academy"
+              className="h-9 w-9 object-contain"
+            />
+            <span className="hidden sm:block text-sm tracking-wide
+              text-[#e6f2ee] font-medium">
+              Sanskriti Tennis Academy
+            </span>
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) =>
-                  `relative text-sm tracking-wide transition-colors
+                  `text-sm tracking-wide transition-colors
                   ${
                     isActive
                       ? "text-[#8fbfa9]"
-                      : "text-[#cbdad4] hover:text-[#e6f2ee]"
+                      : "text-[#b8cbc3] hover:text-[#e6f2ee]"
                   }`
                 }
               >
-                {({ isActive }) => (
-                  <>
-                    {item.name}
-                    {isActive && (
-                      <motion.span
-                        layoutId="nav-indicator"
-                        className="absolute -bottom-2 left-0 right-0 h-[2px]
-                        bg-[#8fbfa9]"
-                      />
-                    )}
-                  </>
-                )}
+                {item.name}
               </NavLink>
             ))}
           </nav>
@@ -81,30 +77,28 @@ export default function Navbar() {
           {/* MOBILE TOGGLE */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden text-[#e6f2ee]
-            text-sm tracking-wide"
+            className="md:hidden text-sm tracking-wide text-[#e6f2ee]"
           >
             Menu
           </button>
         </div>
-      </motion.header>
+      </header>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE NAV */}
       <AnimatePresence>
         {open && (
-          <motion.div
+          <motion.aside
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-[#0b1411]"
           >
-            {/* SLIDE PANEL */}
             <motion.div
-              initial={{ y: "100%" }}
+              initial={{ y: 40 }}
               animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="h-full flex flex-col justify-between px-8 py-10"
+              exit={{ y: 40 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="h-full flex flex-col px-8 py-10"
             >
               {/* TOP */}
               <div className="flex items-center justify-between">
@@ -121,51 +115,26 @@ export default function Navbar() {
               </div>
 
               {/* LINKS */}
-              <motion.nav
-                initial="hidden"
-                animate="show"
-                variants={{
-                  hidden: {},
-                  show: {
-                    transition: {
-                      staggerChildren: 0.08,
-                    },
-                  },
-                }}
-                className="flex flex-col gap-8 mt-20"
-              >
+              <nav className="flex flex-col gap-10 mt-24">
                 {navItems.map((item) => (
-                  <motion.div
+                  <Link
                     key={item.name}
-                    variants={{
-                      hidden: { opacity: 0, y: 30 },
-                      show: { opacity: 1, y: 0 },
-                    }}
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className="text-3xl font-medium text-[#e6f2ee]
+                    hover:text-[#8fbfa9] transition-colors"
                   >
-                    <Link
-                      to={item.path}
-                      onClick={() => setOpen(false)}
-                      className="text-3xl font-medium
-                      text-[#e6f2ee] hover:text-[#8fbfa9]
-                      transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
+                    {item.name}
+                  </Link>
                 ))}
-              </motion.nav>
+              </nav>
 
               {/* FOOT */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-xs tracking-wide text-[#8fbfa9]"
-              >
-                Elite International Tennis Academy
-              </motion.p>
+              <p className="mt-auto text-xs tracking-wide text-[#8fbfa9]">
+                International Tennis Development Program
+              </p>
             </motion.div>
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
     </>

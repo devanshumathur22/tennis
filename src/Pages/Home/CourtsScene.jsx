@@ -1,95 +1,110 @@
 import { motion } from "framer-motion";
+import img13 from "../assets/image/13.jpg";
+import img14 from "../assets/image/14.jpg";
+import img15 from "../assets/image/15.jpg";
+import img16 from "../assets/image/16.jpg";
+import img17 from "../assets/image/17.jpg";
+import img18 from "../assets/image/18.jpg";
 
 export default function CourtsScene() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600",
+      src: img13,
       title: "Morning Sessions",
-      hint: "Calm environment for technical work",
-      delay: 0,
+      hint: "Calm conditions for technical refinement",
     },
     {
-      src: "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1600",
-      title: "Evening Practice",
-      hint: "Match-like conditions under lights",
-      delay: 0.15,
+      src: img14,
+      title: "Evening Training",
+      hint: "Match-like intensity under lights",
     },
     {
-      src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1600",
+      src: img15,
       title: "Court Surface",
-      hint: "Consistent bounce & safe footing",
-      delay: 0.3,
+      hint: "Consistent bounce and safe footing",
+    },
+    {
+      src: img18,
+      title: "Training Atmosphere",
+      hint: "Distraction-free environment",
+    },
+    {
+      src: img16,
+      title: "Player Movement",
+      hint: "Space designed for structured drills",
+    },
+    {
+      src: img17,
+      title: "Facility Standards",
+      hint: "Maintained for long-term development",
     },
   ];
 
   return (
-    <section className="relative bg-[#0b1411] text-[#e6f2ee] py-24 md:py-32 xl:py-40">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-14 xl:px-20">
+    <section className="relative bg-[#0b1411] text-[#e6f2ee] py-28 md:py-36 xl:py-44">
+      <div className="max-w-7xl mx-auto px-6 md:px-14 xl:px-20">
 
         {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl mb-16 md:mb-24"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="max-w-3xl mb-20 md:mb-28"
         >
-          <span className="block text-[11px] tracking-[0.3em] uppercase
-            text-[#8fbfa9] mb-4">
+          <span className="block text-[11px] tracking-[0.35em] uppercase
+            text-[#8fbfa9] mb-5">
             Training Environment
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl
             font-medium leading-tight">
-            Space designed for <br />
-            <span className="text-[#8fbfa9]">focused training.</span>
+            Courts designed for <br />
+            <span className="text-[#8fbfa9]">serious development.</span>
           </h2>
         </motion.div>
 
-        {/* IMAGE GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          gap-8 md:gap-12">
           {images.map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: img.delay }}
-              className="group relative h-[260px] sm:h-[340px] md:h-[420px] lg:h-[480px]
-              overflow-hidden cursor-pointer"
+              transition={{ duration: 0.8, delay: i * 0.08 }}
+              className="relative overflow-hidden bg-[#0e1714]"
             >
               {/* IMAGE */}
               <motion.img
                 src={img.src}
                 alt={img.title}
-                className="absolute inset-0 w-full h-full object-cover
-                scale-110 group-hover:scale-100
-                transition-transform duration-[1200ms] ease-out"
+                initial={{ scale: 1.12 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 1.1, ease: "easeOut" }}
+                className="h-80 sm:h-95 md:h-105
+                w-full object-cover"
               />
 
-              {/* BASE OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t
-                from-[#0b1411]/65 via-[#0b1411]/20 to-transparent" />
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-linear-to-t
+                from-[#0b1411]/75 via-[#0b1411]/25 to-transparent" />
 
-              {/* HOVER CONTENT */}
-              <div
-                className="absolute inset-x-0 bottom-0 p-6
-                translate-y-full group-hover:translate-y-0
-                transition-transform duration-700 ease-out
-                bg-gradient-to-t from-[#0b1411]/90 to-transparent"
-              >
-                <p className="text-sm text-[#8fbfa9] uppercase tracking-widest mb-2">
+              {/* TEXT – ALWAYS VISIBLE */}
+              <div className="absolute bottom-0 p-6">
+                <p className="text-xs tracking-[0.3em] uppercase
+                  text-[#8fbfa9] mb-2">
                   {img.title}
                 </p>
-                <p className="text-sm text-[#d2e2db]">
+                <p className="text-sm text-[#b8cbc3] max-w-xs">
                   {img.hint}
                 </p>
               </div>
 
-              {/* SOFT BORDER GLOW */}
+              {/* SUBTLE FRAME */}
               <div className="pointer-events-none absolute inset-0
-                ring-1 ring-[#8fbfa9]/10 group-hover:ring-[#8fbfa9]/30
-                transition duration-700" />
+                ring-1 ring-[#8fbfa9]/10" />
             </motion.div>
           ))}
         </div>
@@ -99,13 +114,14 @@ export default function CourtsScene() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-14 md:mt-20 max-w-2xl text-base sm:text-lg
-          text-[#b8cbc3] leading-relaxed"
+          transition={{ duration: 0.7 }}
+          className="mt-20 md:mt-24 max-w-2xl
+          text-base sm:text-lg text-[#b8cbc3]
+          leading-relaxed"
         >
-          Our courts and training areas are designed to reduce distractions
-          and encourage concentration — from early morning technical sessions
-          to competitive evening training.
+          The training environment is intentionally calm and structured,
+          allowing players to focus on execution, repetition, and long-term
+          improvement without unnecessary distractions.
         </motion.p>
 
       </div>

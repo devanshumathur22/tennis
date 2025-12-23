@@ -1,6 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import img20 from "./assets/image/20.jpg";
+import img21 from "./assets/image/21.jpg";
+import img22 from "./assets/image/22.jpg";
+import img23 from "./assets/image/23.jpg";
+import img24 from "./assets/image/24.jpg";
+import img25 from "./assets/image/25.jpg";
+
 
 export default function Programs() {
   const [active, setActive] = useState(null);
@@ -15,8 +22,7 @@ export default function Programs() {
       title: "Junior Development Program",
       short:
         "For young players focusing on movement, coordination, balance, and correct stroke fundamentals.",
-      image:
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600",
+      image: img21,
       details: [
         "Footwork, balance, and coordination development",
         "Introduction to all basic strokes",
@@ -29,8 +35,7 @@ export default function Programs() {
       title: "Performance Training Program",
       short:
         "For intermediate players developing consistency, endurance, and controlled match play.",
-      image:
-        "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1600",
+      image: img22,
       details: [
         "Consistency-based drilling",
         "On-court endurance & fitness",
@@ -43,8 +48,7 @@ export default function Programs() {
       title: "Competitive Squad",
       short:
         "Advanced program for tournament-ready players focusing on tactics and pressure handling.",
-      image:
-        "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1600",
+      image: img23,
       details: [
         "Match simulations with scoring",
         "Advanced tactical awareness",
@@ -56,6 +60,7 @@ export default function Programs() {
       title: "Private Coaching",
       short:
         "Individualized sessions addressing specific technical and performance needs.",
+      image: img24,
       details: [
         "Personalized technical correction",
         "Video analysis",
@@ -66,6 +71,7 @@ export default function Programs() {
       title: "Seasonal Training Camps",
       short:
         "Intensive development camps conducted during holidays and off-season periods.",
+      image: img25,
       details: [
         "High-volume training blocks",
         "Fitness + match play",
@@ -83,11 +89,11 @@ export default function Programs() {
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.4 }}
-          src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000"
+          src={img20}
           alt="Tennis training"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b
+        <div className="absolute inset-0 bg-linear-to-b
           from-[#0b1411]/85 via-[#0b1411]/60 to-[#0b1411]/95" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20">
@@ -122,7 +128,7 @@ export default function Programs() {
 
                 {/* IMAGE – SAME AS TOURNAMENT STYLE */}
                 {p.image && (
-                  <div className="relative h-[260px] sm:h-[320px] md:h-[380px]
+                  <div className="relative h-65 sm:h-80 md:h-96 lg:h-80
                     overflow-hidden border border-[#2a3a34]
                     shadow-[0_40px_90px_rgba(0,0,0,0.6)]">
                     <motion.img
@@ -133,7 +139,7 @@ export default function Programs() {
                       alt={p.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t
+                    <div className="absolute inset-0 bg-linear-to-t
                       from-[#0b1411]/70 via-transparent to-transparent" />
                   </div>
                 )}

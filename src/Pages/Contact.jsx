@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import img41 from "./assets/image/41.jpg";
+import img42 from "./assets/image/42.jpg";
+
 
 export default function Contact() {
 
@@ -18,12 +21,12 @@ export default function Contact() {
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000"
+          src={img41}
           alt="Tennis academy contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b
+        <div className="absolute inset-0 bg-linear-to-b
           from-[#0b1411]/90 via-[#0b1411]/65 to-[#0b1411]/95" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20">
@@ -87,7 +90,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative h-[260px] sm:h-[320px] md:h-[380px]
+            className="relative h-65 sm:h-80 md:h-96
             overflow-hidden border border-[#2a3a34]
             shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
           >
@@ -95,11 +98,11 @@ export default function Contact() {
               initial={{ scale: 1.12 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 1.4 }}
-              src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1600"
+              src={img42}
               alt="Academy interaction"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t
+            <div className="absolute inset-0 bg-linear-to-t
               from-[#0b1411]/65 via-transparent to-transparent" />
           </motion.div>
 

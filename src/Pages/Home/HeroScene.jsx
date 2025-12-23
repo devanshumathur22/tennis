@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import heroimg from "../assets/image/hero.jpg";
 
 export default function HeroScene() {
   const ref = useRef(null);
@@ -25,11 +26,11 @@ export default function HeroScene() {
         className="absolute inset-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=2000"
+          src={heroimg}
           alt="Morning Tennis Court"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b
+        <div className="absolute inset-0 bg-linear-to-b
           from-[#0b1411]/80 via-[#0b1411]/55 to-[#0b1411]/90" />
       </motion.div>
 
@@ -97,7 +98,7 @@ export default function HeroScene() {
 
       {/* BOTTOM FADE */}
       <div className="absolute bottom-0 left-0 right-0 h-40
-        bg-gradient-to-t from-[#0b1411] to-transparent" />
+        bg-linear-to-t from-[#0b1411] to-transparent" />
     </section>
   );
 }

@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import img26 from "./assets/image/26.jpg";
+import img27 from "./assets/image/27.jpg";
+import img28 from "./assets/image/28.jpg";
+import img29 from "./assets/image/29.jpg";
 
 export default function Tournaments() {
 
@@ -15,8 +19,7 @@ export default function Tournaments() {
       location: "Jaipur, Rajasthan",
       category: "Under 12 & Under 14",
       level: "Development Level",
-      image:
-        "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1600",
+      image: img26,
       description:
         "A structured development tournament designed to introduce young players to official match formats in a controlled and supportive competitive environment.",
     },
@@ -26,8 +29,7 @@ export default function Tournaments() {
       location: "Jaipur District Tennis Complex",
       category: "Under 16 & Under 18",
       level: "Competitive",
-      image:
-        "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1600",
+      image: img27,
       description:
         "Official district-level competition where players compete under ranking conditions, preparing them for higher-level tournaments.",
     },
@@ -37,8 +39,7 @@ export default function Tournaments() {
       location: "Sanskriti Tennis Academy",
       category: "All Training Groups",
       level: "Internal Match Play",
-      image:
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600",
+      image: img28,
       description:
         "An intensive match-play camp simulating tournament pressure with daily matches, recovery protocols, and coach-led feedback sessions.",
     },
@@ -60,11 +61,11 @@ export default function Tournaments() {
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.4 }}
-          src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=2000"
+          src={img29}
           alt="Tournament tennis"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b
+        <div className="absolute inset-0 bg-linear-to-b
           from-[#0b1411]/85 via-[#0b1411]/60 to-[#0b1411]/95" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20">
@@ -95,7 +96,7 @@ export default function Tournaments() {
               border-b border-[#1f2a26] pb-20"
             >
               {/* IMAGE */}
-              <div className="relative h-[260px] sm:h-[320px] md:h-[380px]
+              <div className="relative h-65 sm:h-80 md:h-96 lg:h-80
                 overflow-hidden border border-[#2a3a34]
                 shadow-[0_40px_90px_rgba(0,0,0,0.6)]">
                 <motion.img
@@ -106,7 +107,7 @@ export default function Tournaments() {
                   alt={t.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t
+                <div className="absolute inset-0 bg-linear-to-t
                   from-[#0b1411]/70 via-transparent to-transparent" />
               </div>
 
